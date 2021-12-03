@@ -54,6 +54,14 @@ class Optionstat:
         self._strike_prices = []
         self._contract_size = contract_size
     
+    def load_from_list(self, options):
+        """load from list
+        Args:
+            option_trades(list): all legs of option trading
+        """
+        for i in options:
+            self.add_trade(i[0], i[1], i[2], i[3])
+    
     def add_trade(self, strike, premium, position, option_type):
         """add option trade leg
         
